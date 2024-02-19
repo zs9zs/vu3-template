@@ -18,7 +18,20 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    // <script>标签没有lang="ts"会有蓝色警告, "allowJs"设为true允许js编译
+    "allowJs": true,
+
+    // 配置别名@需要配置baseUrl和paths
+    "baseUrl": "./",
+    "paths": {
+      // 根据别名配置相关路径
+      "@/*": ["src/*"],
+      "@utils/*": ["./src/utils/*"],
+      // 解决找不到vuex默认路径的问题，使用paths映射到该路径
+      "vuex": ["./node_modules/vuex/types"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

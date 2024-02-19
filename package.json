@@ -6,15 +6,47 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts}": "eslint --fix"
   },
   "dependencies": {
-    "vue": "^3.2.47"
+    "@vueuse/core": "^10.2.1",
+    "axios": "^1.4.0",
+    "element-plus": "^2.5.5",
+    "pinia": "^2.1.6",
+    "sass": "^1.64.2",
+    "vue": "^3.2.47",
+    "vue-router": "^4.2.4",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@arco-design/web-vue": "^2.49.1",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-vue": "^4.1.0",
-    "typescript": "^5.0.2",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-define-config": "^1.21.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.21.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
+    "typescript": "^5.3.3",
+    "unplugin-icons": "^0.16.5",
     "vite": "^4.3.2",
+    "vite-plugin-mock": "^2.9.6",
     "vue-tsc": "^1.4.2"
   }
 }
