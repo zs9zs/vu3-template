@@ -20,9 +20,9 @@ export default createStore({
     },
   },
   actions: {
-    increment(context) {
-      context.commit("increment");
-    },
+    // increment(context) {
+    //   context.commit("increment");
+    // },
   },
   getters: {
     double(state: typeof defaultState) {
