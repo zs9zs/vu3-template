@@ -1,8 +1,3 @@
-<template>
-  <div></div>
-</template>
-
-<script>
 navigator.getBattery().then(function (battery) {
   // 获取设备电量剩余百分比
   var level = battery.level; //最大值为1,对应电量100%
@@ -42,6 +37,3 @@ navigator.getBattery().then(function (battery) {
     console.log("完全放电需要时间: " + battery.dischargingTime);
   });
 });
-</script>
-
-<style></style>

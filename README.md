@@ -137,7 +137,7 @@ toolsdog
 ├── common/ // 通用类库目录
 ├── components/ // 公共组件目录
 ├── router/ // 路由配置目录
-├── store/ // 状态管理目录
+├── stores/ // 状态管理目录
 ├── style/ // 通用 CSS 目录
 ├── utils/ // 工具函数目录
 ├── views/ // 页面组件目录
@@ -177,3 +177,10 @@ vite官网：https://vitejs.dev/config/
     }
    }
    使用 “paths” 映射,在找不到模块的默认路径时,将其映射到类型定义文件
+
+2. 找不到模块“vue-router”或其相应的类型声明。
+  问题：import { RouterView } from "vue-router"; 提示”找不到模块“vue-router”或其相应的类型声明。“
+  解决：和ts有关系，在vite-env.d.ts 加 declare module "vue-router"
+
+3. vue eslint 报错 error “Component name “*****“ should always be multi-word”
+  解决：.eslintrc.cjs 配置 vue/multi-word-component-names

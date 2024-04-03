@@ -27,5 +27,15 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['@typescript-eslint', 'vue'],
-  rules: {}
+  rules: {
+    // 关闭名称校验 'vue/multi-word-component-names': 'off', 全部都关闭
+    // 添加组件命名忽略规则
+    'vue/multi-word-component-names': [
+      'error',
+      {
+        ignores: ['home', 'demo', 'login', 'layout'] //在这个数组中加入需要忽略的组件名
+      }
+    ],
+    'no-unused-vars': 'off'
+  }
 }

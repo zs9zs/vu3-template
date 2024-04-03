@@ -1,10 +1,10 @@
 // 防抖
 export function debounce(delay, callback) {
-  let task
+  let task;
   return function () {
-    clearTimeout(task)
+    clearTimeout(task);
     task = setTimeout(() => {
-      callback.apply(this, arguments)
-    }, delay)
-  }
+      callback.apply(this, arguments);
+    }, delay);
+  };
 }
