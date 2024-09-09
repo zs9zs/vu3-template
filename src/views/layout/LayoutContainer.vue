@@ -59,6 +59,18 @@ const onCommand = async (command) => {
           <el-icon><Management /></el-icon>
           <span>文章分类</span>
         </el-menu-item>
+        <el-sub-menu index="/independent">
+          <!-- 多级菜单的标题-具名插槽title -->
+          <template #title>
+            <el-icon><Management /></el-icon>
+            <span>单功能页面</span>
+          </template>
+          <!-- 展开的内容-默认插槽 -->
+          <el-menu-item index="/independent/particles">
+            <el-icon><Management /></el-icon>
+            <span>粒子系统</span>
+          </el-menu-item>
+        </el-sub-menu>
         <el-menu-item index="/article/manage">
           <el-icon><Promotion /></el-icon>
           <span>文章管理</span>

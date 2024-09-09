@@ -45,4 +45,16 @@ export default [
     name: "vuedemo",
     component: () => import("@/views/demo.vue"),
   },
+  {
+    path: "/independent",
+    name: "independent",
+    component: () => import("@/views/independentpage/ParticlesPage.vue"),
+    children: [
+      {
+        path: "/independent/particles",
+        name: "particles",
+        component: () => import("@/views/independentpage/ParticlesPage.vue"),
+      },
+    ],
+  },
 ];

@@ -18,8 +18,10 @@ import { User, Lock } from "@element-plus/icons-vue";
 import { ref, watch } from "vue";
 import { ElMessage } from "element-plus";
 import { useUserStore } from "@/stores/user";
+import { useRouter } from "vue-router";
+const router = useRouter();
 const userStore = useUserStore();
-const isRegister = ref(true);
+const isRegister = ref(false);
 //整个用于提交的form数据对象
 const formModel = ref({
   username: "",
@@ -78,8 +80,17 @@ const register = async () => {
 // 登录前预校验
 const login = async () => {
   await form.value.validate();
+  console.log("zslog_formModel", formModel.value, formModel.value.password);
+  if (
+    formModel.value.username === "admin" &&
+    formModel.value.password === "123456"
+  ) {
+    ElMessage.success("登录成功");
+    router.push(`/layout`);
+  } else {
+    ElMessage.error("用户名或密码错误");
+  }
   userStore.setToken("zslog");
-  ElMessage.success("登录成功");
 };
 
 // 登录/注册切换重置
@@ -162,7 +173,7 @@ watch(isRegister, () => {
         v-else
       >
         <el-form-item>
-          <h1>登录</h1>
+          <h1>登录（admin 123456）</h1>
         </el-form-item>
         <el-form-item prop="username">
           <el-input
