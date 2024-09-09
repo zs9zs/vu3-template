@@ -6,6 +6,7 @@ import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig({
   plugins: [
@@ -15,6 +16,10 @@ export default defineConfig({
     }),
     Components({
       resolvers: [ElementPlusResolver()]
+    }),
+    viteMockServe({
+      mockPath: './src/mock/source', // 解析刚刚user.ts的位置
+      localEnabled: true // 是否开启开发环境
     })
   ],
   resolve: {
@@ -27,13 +32,13 @@ export default defineConfig({
     port: 4000, // 设置服务启动端口号
     open: true, // 设置服务启动时是否自动打开浏览器
     cors: true // 允许跨域
-    // 设置代理，根据我们项目实际情况配置
+    // 设置代理，根据我们项目实际情况配置（配置跨域）
     // proxy: {
     //   '/api': {
     //     target: 'http://xxx.xxx.xxx.xxx:8000',
     //     changeOrigin: true,
     //     secure: false,
-    //     rewrite: (path) => path.replace('/api/', '/')
+    //     rewrite: (path) => path.replace('/^\/api/', '')
     //   }
     // }
   }

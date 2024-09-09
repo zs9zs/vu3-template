@@ -13,11 +13,13 @@
     "*.{vue,js,ts}": "eslint --fix"
   },
   "dependencies": {
+    "@bundled-es-modules/axios": "^0.27.2",
     "@element-plus/icons-vue": "^2.3.1",
     "@vueup/vue-quill": "^1.2.0",
     "@vueuse/core": "^10.2.1",
     "axios": "^1.4.0",
     "element-plus": "^2.5.5",
+    "mockjs": "^1.1.0",
     "pinia": "^2.1.6",
     "sass": "^1.64.2",
     "vue": "^3.2.47",
@@ -26,6 +28,7 @@
   },
   "devDependencies": {
     "@arco-design/web-vue": "^2.49.1",
+    "@types/node": "^20.12.3",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-vue": "^4.1.0",

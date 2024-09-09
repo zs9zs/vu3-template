@@ -184,3 +184,14 @@ vite官网：https://vitejs.dev/config/
 
 3. vue eslint 报错 error “Component name “*****“ should always be multi-word”
   解决：.eslintrc.cjs 配置 vue/multi-word-component-names
+
+4. TypeScript 中找不到名称 ‘__dirname’
+  原因：path 模块是 node.js 的内置模块，而 node.js 默认不支持 ts 文件的
+  解决：pnpm i -D @types/node
+
+5. vite 运行项目报错 ‘axios/index.js‘ does not provide anexport named ‘default‘
+  原因： Vite 是完全依靠 ESM 原生能力的，也就是他只认识 import ，因为 Vite 依赖 script 的 module 属性。
+  我们的代码最终都会被送到浏览器里执行，require 是 cjs 的关键词，浏览器环境本身就没定义这个方法，自然就报错了。
+  这里和 webpack 不一样，webpack 把文件送到浏览器之前是会进行预打包的，这时候已经将 require 转换成 浏览器能兼容的方法了。
+  出现上述报错的原因可能是依赖中通过import导入一个ES6模块，但是这个ES6模块中使用了require，当Vite去构建的时候，发现是采用import导入的就不会预编译，从而报错
+  解决： npm i @bundled-es-modules/axios

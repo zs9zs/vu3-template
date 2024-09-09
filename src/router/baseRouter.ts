@@ -23,6 +23,26 @@ export default [
         name: "articleManage",
         component: () => import("@/views/article/ArticleManage.vue"),
       },
+      {
+        path: "/user/profile",
+        name: "profile",
+        component: () => import("@/views/user/UserProfile.vue"),
+      },
+      {
+        path: "/user/avatar",
+        name: "avatar",
+        component: () => import("@/views/user/UserAvatar.vue"),
+      },
+      {
+        path: "/user/password",
+        name: "password",
+        component: () => import("@/views/user/UserPassword.vue"),
+      },
     ],
+  },
+  {
+    path: "/vuedemo",
+    name: "vuedemo",
+    component: () => import("@/views/demo.vue"),
   },
 ];
